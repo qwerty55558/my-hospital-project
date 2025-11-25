@@ -8,6 +8,6 @@
     }
 }
 
-.floatArrow{
-    @apply flex justify-center items-center w-[50px] h-[50px] bg-white rounded-full fixed bottom-10 right-10 cursor-pointer;
+.arrowContainer{
+    @apply flex justify-center items-center h-0;
 }
