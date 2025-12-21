@@ -1,6 +1,6 @@
 "use client"
 
-import style from "@/css/Index.module.css";
+// Removed Index.module.css import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image'
@@ -161,7 +161,7 @@ function DoctorCard({ doctor }: { doctor: any }) {
     };
 
     return (
-        <div id={`doctor-${doctor.name.split(' ')[0]}`} className={`relative ${doctor.bgClass} py-32 min-h-[80vh] flex items-center justify-center overflow-hidden`}>
+        <div id={`doctor-${doctor.name.split(' ')[0]}`} className={`relative ${doctor.bgClass} py-32 min-h-[80vh] flex items-center justify-center overflow-hidden w-full text-center mx-auto h-auto`}>
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/20 to-transparent pointer-events-none mix-blend-overlay" />
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -201,10 +201,10 @@ export default function Home() {
     return (
         <>
             <ScrollToTop />
-            <div className={style.videoContainer}>
-                <video autoPlay loop muted src={"/vid/mainVideo.mp4"}></video>
+            <div className="w-full pointer-events-none relative z-0">
+                <video className="w-full h-[100vh] object-cover" autoPlay loop muted src={"/vid/mainVideo.mp4"}></video>
                 <div className="absolute inset-0 bg-black/20 z-0" />
-                <span className={`${style.floatCenterText} z-10 w-full px-6`}>
+                <span className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white z-10 w-full px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -239,9 +239,11 @@ export default function Home() {
                     </motion.div>
                 </span>
             </div>
-            <div className={style.floatArrow}>
-                <FontAwesomeIcon icon={faArrowDown} beatFade={true}
-                    className={"text-xl sm:text-2xl md:text-3xl xl:text-4xl text-gray-400"} />
+            <div className="flex justify-center items-center relative z-50">
+                <div className="absolute top-[-3rem]">
+                    <FontAwesomeIcon icon={faArrowDown} beatFade={true}
+                        className="text-xl sm:text-2xl md:text-3xl xl:text-4xl primary-text-2 drop-shadow-lg" />
+                </div>
             </div>
 
             <div className="bg-white py-20 px-6">
@@ -254,7 +256,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className={style.contentContainer}>
+            <div className="flex flex-col justify-center">
                 {DOCTORS.map((doctor, index) => (
                     <DoctorCard
                         key={index}

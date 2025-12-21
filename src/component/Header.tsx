@@ -1,6 +1,6 @@
 "use client";
 
-import style from "@/css/Header.module.css";
+// Removed Header.module.css import
 import { useState, useEffect } from "react";
 import NavMenu from "@/component/NavMenu";
 import Logo from "@/component/Logo";
@@ -33,7 +33,7 @@ export default function Header() {
 
     return (
         <>
-            <div className={style.navContainer}>
+            <div className="flex justify-between items-center px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] fixed top-0 left-0 right-0 select-none z-[100] transition-all duration-300">
                 <Logo className="w-[50px] h-[50px] cursor-pointer drop-shadow-md hover:scale-105 transition-transform" />
                 <div>
                 </div>
@@ -45,8 +45,8 @@ export default function Header() {
                         {/* Shortcut Badge: scale 없음, 색만 group-hover */}
                         <div className="hidden md:flex mr-3 px-2 py-1 rounded-md text-[10px] font-bold text-white bg-[#191F28] duration-300 group-hover:bg-[#00B8FF]">
                             <span className="opacity-80 mr-1">{shortcutSymbol}</span>
-                            <span className="mr-1">+</span>
-                            <span>F</span>
+                            <span className="opacity-80 mr-1">+</span>
+                            <span className="opacity-80">F</span>
                         </div>
 
                         {/* Search Icon: 색만 group-hover */}

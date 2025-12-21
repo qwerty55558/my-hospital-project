@@ -61,7 +61,7 @@ export default function Footer() {
                         <Link
                             key={idx}
                             href={link.path}
-                            className={`text-sm ${link.bold ? "text-[#191F28] font-bold" : "text-[#4E5968]"} hover:underline`}
+                            className={`text-sm text-[#4E5968] hover:underline`}
                         >
                             {link.name}
                         </Link>
